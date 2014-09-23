@@ -33,6 +33,10 @@ smartModals.factory('smartModals', ['$modal', '$sce', function($modal, $sce) {
 
       var url = options.templateUrl || './bower_components/smart-utils/smart-modals/templates/alert-modal.html';
       options.message = $sce.trustAsHtml(options.message);
+      options.closeClass = options.closeClass || "btn btn-success";
+      options.close = options.close || "Yes";
+      options.next = options.next || function(){};
+
 
       $modal.open({
         templateUrl: url,

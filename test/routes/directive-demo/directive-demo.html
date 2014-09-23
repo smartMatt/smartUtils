@@ -1,0 +1,18 @@
+<div>
+  <div class="file-button-container">
+      <input file-input id="file_comment" file-show="commentFileName" file-obj="support" type="file" name="file">
+    <span class='file-button btn btn-default'>
+      <span class="glyphicon glyphicon-paperclip"></span>
+    </span>
+    <span class="file-button-title">Title<div file-remove file-id="file_comment" file-show="commentFileName" file-obj="support"><span class="glyphicon glyphicon-remove"></span></div></span>
+  </div>
+
+
+
+  <div class="file-button-container">
+    <span class='file-button btn btn-default btn-file'>
+      <input id="file_input_{{$index}}" type="file" name="Files[{{$index}}]" fieldname ng-model="file.data" data-index="{{$index}}" data-filename="{{file.filename}}" onchange="angular.element(this).scope().fileChanged(this)" ng-required="!file.filename">
+      <span ng-hide="file.filename">Browse</span>
+    </span>
+  </div>
+</div>

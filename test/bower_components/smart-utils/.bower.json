@@ -18,11 +18,11 @@
     "angular-bootstrap": "~0.11.0",
     "bootstrap": "~3.2.0"
   },
-  "_release": "df579a5f6b",
+  "_release": "d2652c424f",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "df579a5f6b20bdebd6c64c3ac183f1c3b86016d0"
+    "commit": "d2652c424f851959d44f5ba7473f9cd15e607010"
   },
   "_source": "git://github.com/smartMatt/smartUtils.git",
   "_target": "*",

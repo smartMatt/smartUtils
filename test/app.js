@@ -11,6 +11,9 @@ smartDemo.config(['$routeProvider', function ($routeProvider) {
   }).when('/modal-demo', {
     controller: 'ModalDemoCtrl',
     templateUrl: 'routes/modal-demo/modal-demo.html'
+  }).when('/directive-demo', {
+    controller: 'DirectiveDemoCtrl',
+    templateUrl: 'routes/directive-demo/directive-demo.html'
   })
 
 }])

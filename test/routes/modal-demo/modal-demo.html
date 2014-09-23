@@ -1,5 +1,5 @@
 <div>
-  <h1>Modal Demo</h1>
+  <h2>SmartModals Demo</h2>
 
   <div class="col-sm-3">
     <span class="btn btn-sm btn-danger" ng-click="alertModal()">Alert Modal</span>
@@ -40,6 +40,20 @@
     <span class="btn btn-sm btn-primary" ng-click="customModal()">Custom Modal</span>
   </div>
   <div class="col-sm-9">
+    <pre>
+    var options = {
+      templateUrl: <span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>./routes/modal-demo/custom-modal.html</span><span style='color:#2a00ff; '>"</span>,
+      title: <span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>Custom Modal</span><span style='color:#2a00ff; '>"</span>,
+      message: <span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>All modals can use &lt;b>Html tags&lt;/b> in the &lt;i>message&lt;/i> attribute.</span><span style='color:#2a00ff; '>"</span>,
+      customAttribute: <span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>This is a new attribute not present on standard templates.</span><span style='color:#2a00ff; '>"</span>,
+      closingMessage: <span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>Callback functions can be assigned to the next attribute.</span><span style='color:#2a00ff; '>"</span>,
+      close: <span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>Ok</span><span style='color:#2a00ff; '>"</span>,
+      next: function () {
+        alert('Do callback stuff here!')
+      }
+    }
 
+    smartModals.confirm(options)
+    </pre>
   </div>
 </div>
