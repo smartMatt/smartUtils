@@ -1,4 +1,4 @@
-var smartDemo = angular.module('smartDemo', ['ngRoute', 'ui.bootstrap', 'smartErrors', 'smartModals', 'smartForms']);
+var smartDemo = angular.module('smartDemo', ['ngRoute', 'ui.bootstrap', 'smartErrors', 'smartModals', 'smartForms', 'smartDirectives']);
 
 
 smartDemo.config(['$routeProvider', function ($routeProvider) {
