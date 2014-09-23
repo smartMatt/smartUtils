@@ -7,7 +7,7 @@
     <!--<span class="file-button-title">Title<div file-remove file-id="file_comment" file-show="commentFileName" file-obj="support"><span class="glyphicon glyphicon-remove"></span></div></span>-->
   <!--</div>-->
 
-  <h2>SmartDirectives</h2>
+  <h2 class="col-lg-12">SmartDirectives</h2>
 
   <div class="col-lg-12">
     <hr>
@@ -24,11 +24,12 @@
         <span class="file-button-title">{{fileName}}</span>
         <span file-remove file-id="new_file" file-show="fileName" ng-show="fileName" class="glyphicon glyphicon-remove"></span>
       </div>
-
-      <ul>
+      <br>
+      <ul class="slim-ul">
         <li>The "file-input" attribute signifies the input element.</li>
         <li>"file-show" attribute must equal the scope variable that represents the file title.</li>
         <li>The "file-remove" attribute signifies the remove button.</li>
+        <li>"file-id" attribute must equal the id of the file input.</li>
       </ul>
 
 
@@ -48,16 +49,28 @@
     </div>
   </div>
 
+  <div class="col-lg-12">
+    <hr>
+  </div>
   <h3 class="col-lg-12">Multiple email validation</h3>
   <div class="col-lg-12">
     <div class="col-sm-3">
-      <div ng-form="emailForm">
-        <input multiple-emails type="text" name="emailInput" ng-model="emailInput" class="form-control">
-        <span class="help-block" ng-show="emailForm.emailInput.$error.multipleEmails">invalid</span>
+      <div ng-form="emailForm" ng-class="{'has-error': emailForm.emailInput.$error.multipleEmails}">
+          <input multiple-emails type="text" name="emailInput" ng-model="emailInput" class="form-control">
+          <span class="help-block" ng-show="emailForm.emailInput.$error.multipleEmails">Multiple emails invalid</span>
       </div>
+      <br>
+      <ul class="slim-ul">
+        <li>Include the "multiple-emails" attribute to the appropriate input.</li>
+        <li>Set the input type to "text".</li>
+        <li>Error is available as the property "multipleEmails" on the input error object.</li>
+      </ul>
     </div>
     <div class="col-sm-9">
-
+      <pre>
+      &lt;input multiple-emails type=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>text</span><span style='color:#2a00ff; '>"</span> name=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>emailInput</span><span style='color:#2a00ff; '>"</span> ng-model=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>emailInput</span><span style='color:#2a00ff; '>"</span> class=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>form-control</span><span style='color:#2a00ff; '>"</span>>
+      &lt;span class=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>help-block</span><span style='color:#2a00ff; '>"</span> ng-show=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>emailForm.emailInput.$error.multipleEmails</span><span style='color:#2a00ff; '>"</span>>Multiple emails invalid&lt;/span>
+      </pre>
     </div>
   </div>
 
