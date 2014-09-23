@@ -52,7 +52,7 @@ smartDirectives.directive('fileInput', function() {
 })
 
 
-allegroUtils.directive('fileRemove', function() {
+smartDirectives.directive('fileRemove', function() {
   return {
     restrict: 'A',
     priority: -1,

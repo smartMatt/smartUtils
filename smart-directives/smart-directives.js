@@ -107,12 +107,12 @@ smartDirectives.directive('multipleEmails', function () {
 
   function validateAll(ctrl, validatorName, value) {
     var split;
-    if(_.indexOf(value, ';') > -1) {
+    if(value.indexOf(';') > -1) {
       split = ';';
     }
-//    else {
-//      split = ',';
-//    }
+    else {
+      split = ',';
+    }
     var validity = ctrl.$isEmpty(value) || value.split(split).every(
         function (email) {
           return EMAIL_REGEXP.test(email.trim());

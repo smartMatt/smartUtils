@@ -7,18 +7,59 @@
     <!--<span class="file-button-title">Title<div file-remove file-id="file_comment" file-show="commentFileName" file-obj="support"><span class="glyphicon glyphicon-remove"></span></div></span>-->
   <!--</div>-->
 
+  <h2>SmartDirectives</h2>
+
+  <div class="col-lg-12">
+    <hr>
+  </div>
+  <h3 class="col-lg-12">File Inputs</h3>
+  <div class="col-lg-12">
+    <div class="col-sm-3">
+
+      <div class="file-button-container">
+        <span class='file-button btn btn-default btn-file'>
+          <input file-input file-show="fileName" id="new_file" type="file" name="file">
+          <span class="glyphicon glyphicon-paperclip"></span>
+        </span>
+        <span class="file-button-title">{{fileName}}</span>
+        <span file-remove file-id="new_file" file-show="fileName" ng-show="fileName" class="glyphicon glyphicon-remove"></span>
+      </div>
+
+      <ul>
+        <li>The "file-input" attribute signifies the input element.</li>
+        <li>"file-show" attribute must equal the scope variable that represents the file title.</li>
+        <li>The "file-remove" attribute signifies the remove button.</li>
+      </ul>
 
 
-  <div class="file-button-container">
-    <span class='file-button btn btn-default btn-file'>
-      <input file-input file-show="fileName" id="new_file" type="file" name="file">
-      <span class="glyphicon glyphicon-paperclip"></span>
-    </span>
+    </div>
+
+    <div class="col-sm-9">
+      <pre>
+      &lt;<span style='color:#7f0055; font-weight:bold; '>div</span> class=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>file-button-container</span><span style='color:#2a00ff; '>"</span>>
+        &lt;span class='file-button btn btn-default btn-file'>
+          &lt;input <span style='color:#7f0055; font-weight:bold; '>file-input</span> <span style='color:#7f0055; font-weight:bold; '>file-show</span>=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>fileName</span><span style='color:#2a00ff; '>"</span> id=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>new_file</span><span style='color:#2a00ff; '>"</span> type=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>file</span><span style='color:#2a00ff; '>"</span> name=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>file</span><span style='color:#2a00ff; '>"</span>>
+          &lt;span class=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>glyphicon glyphicon-paperclip</span><span style='color:#2a00ff; '>"</span>>&lt;/span>
+        &lt;/span>
+        &lt;span class=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>file-button-title</span><span style='color:#2a00ff; '>"</span>> &#123; &#123;fileName&#125; &#125; &lt;/span>
+        &lt;span <span style='color:#7f0055; font-weight:bold; '>file-remove</span> <span style='color:#7f0055; font-weight:bold; '>file-id</span>=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>new_file</span><span style='color:#2a00ff; '>"</span> <span style='color:#7f0055; font-weight:bold; '>file-show</span>=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>fileName</span><span style='color:#2a00ff; '>"</span> ng-show=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>fileName</span><span style='color:#2a00ff; '>"</span> class=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>glyphicon glyphicon-remove</span><span style='color:#2a00ff; '>"</span>>&lt;/span>
+      &lt;/<span style='color:#7f0055; font-weight:bold; '>div</span>>
+      </pre>
+    </div>
   </div>
 
-  <span class="file-button-title">{{fileName}}<span file-remove file-id="new_file" file-show="fileName" ng-show="fileName"></span></span>
+  <h3 class="col-lg-12">Multiple email validation</h3>
+  <div class="col-lg-12">
+    <div class="col-sm-3">
+      <div ng-form="emailForm">
+        <input multiple-emails type="text" name="emailInput" ng-model="emailInput" class="form-control">
+        <span class="help-block" ng-show="emailForm.emailInput.$error.multipleEmails">invalid</span>
+      </div>
+    </div>
+    <div class="col-sm-9">
 
-
+    </div>
+  </div>
 
 
 </div>
