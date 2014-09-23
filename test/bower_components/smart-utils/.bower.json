@@ -1,0 +1,14 @@
+{
+  "name": "smart-utils",
+  "homepage": "https://github.com/smartMatt/smartUtils",
+  "_release": "3e4cb31b22",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "3e4cb31b22368d147e2c99892a86743d185ca3c7"
+  },
+  "_source": "git://github.com/smartMatt/smartUtils.git",
+  "_target": "*",
+  "_originalSource": "smart-utils",
+  "_direct": true
+}

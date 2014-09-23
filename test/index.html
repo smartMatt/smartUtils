@@ -1,0 +1,38 @@
+<html ng-app="smartDemo">
+<head>
+  <script src="./bower_components/angular/angular.js"></script>
+  <script src="./bower_components/angular-route/angular-route.js"></script>
+  <script src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+  <link rel="stylesheet/less" type="text/css" href="./bower_components/bootstrap/less/bootstrap.less">
+  <link rel="stylesheet" href="./app.less">
+
+  <script src="./app.js"></script>
+  <script src="./routes/dashboard/dashboard-ctrl.js"></script>
+  <script src="./routes/form-demo/form-demo-ctrl.js"></script>
+  <script src="./routes/modal-demo/modal-demo-ctrl.js"></script>
+  <script src="./bower_components/smart-utils/smart-errors/smart-errors.js"></script>
+  <script src="./bower_components/smart-utils/smart-modals/smart-modals.js"></script>
+  <script src="./bower_components/smart-utils/smart-forms/smart-forms.js"></script>
+  <script src="./bower_components/less/dist/less-1.7.5.js"></script>
+
+
+
+</head>
+<body>
+<div class="header">
+  <div class="wrapper">
+    <a href="#/"><h1 class="pull-left">Smart Utils</h1></a>
+    <div class="navigation-container">
+      <a href=""><span class="btn btn-sm btn-primary">Smart Errors</span></a>
+      <a href="#/modal-demo"><span class="btn btn-sm btn-primary">Smart Modals</span></a>
+      <a href="#/form-demo"><span class="btn btn-sm btn-primary">Smart Forms</span></a>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="wrapper" ng-view></div>
+</body>
+</html>

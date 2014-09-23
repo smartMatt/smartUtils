@@ -1,0 +1,125 @@
+<div>
+
+  <div class="col-lg-12">
+    <h2>Overview</h2>
+
+    <div class="col-lg-12">
+      <p>SmartForms is designed to simplify the form validation processs.</p>
+      <p>Using SmartForms, we can expect the following behaviour:</p>
+      <ul>
+        <li>When a user "dirties" (interacts) with an input (and the value is invalid), validation errors will shown.</li>
+        <li>An attempt to submit the form will show all validation errors regardless of "dirtiness"</li>
+        <li>Input will become valid once a value meets the appropriate criteria.</li>
+        <li>Upon submission of a valid form, the success function is fired.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <h2 class="col-lg-12">Form Demo</h2>
+
+
+  <div class="form-container col-lg-12">
+
+
+    <form novalidate="" role="form" name="addCustomerForm" ng-submit="validateForm(addCustomerForm) && saveCustomer(customer)">
+
+      <!-- name and email inputs -->
+      <div class="col-md-4">
+        <div class="form-group" ng-class="{'has-error': showError(addCustomerForm['First Name'])}">
+          <label class="control-label">First Name</label>
+          <input class="form-control" name="First Name" ng-model="customer.firstName" type="text" required="" />
+          <span class="help-block" ng-show="showError(addCustomerForm['First Name'])">Required</span>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': showError(addCustomerForm['Last Name'])}">
+          <label class="control-label">Last Name</label>
+          <input class="form-control" name="Last Name" ng-model="customer.lastName" type="text" required="" />
+          <span class="help-block" ng-show="showError(addCustomerForm['Last Name'])">Required</span>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': showError(addCustomerForm.Email)}">
+          <label class="control-label">Email</label>
+          <input class="form-control" name="Email" ng-model="customer.email" type="email" required="" />
+          <span class="help-block" ng-show="showError(addCustomerForm.Email, 'required')">Required</span>
+          <span class="help-block" ng-show="showError(addCustomerForm.Email, 'email')">Please enter a valid email address</span>
+        </div>
+      </div>
+
+      <!-- address inputs -->
+      <div class="col-md-4">
+        <div class="form-group" ng-class="{'has-error': showError(addCustomerForm.Street)}">
+          <label class="control-label">Street</label>
+          <input class="form-control" name="Street" ng-model="customer.address.street" type="text" required="" />
+          <span class="help-block" ng-show="showError(addCustomerForm.Street)">Required</span>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': showError(addCustomerForm.City)}">
+          <label class="control-label">City</label>
+          <input class="form-control" name="City" ng-model="customer.address.city" type="text" required="" ng-change="checkCity(addCustomerForm.city)" />
+          <span class="help-block" ng-show="showError(addCustomerForm.City)">Required</span>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': showError(addCustomerForm.Zip)}">
+          <label class="control-label">Zip</label>
+          <input class="form-control" name="Zip" ng-model="customer.address.zip" type="text" required="" />
+          <span class="help-block" ng-show="showError(addCustomerForm.Zip)">Required</span>
+        </div>
+      </div>
+
+      <!-- other inputs -->
+      <div class="col-md-4">
+        <div class="form-group" ng-class="{'has-error': showError(addCustomerForm.Odd)}">
+          <label class="control-label">Favorite odd number</label>
+          <input name="Odd" ng-model="customer.odd" class="form-control" type="text" ng-pattern="/^\d*[13579]$/" required="" />
+          <span class="help-block" ng-show="showError(addCustomerForm.Odd, 'required')">Required</span>
+          <span class="help-block" ng-show="showError(addCustomerForm.Odd, 'pattern')">Please enter an odd number</span>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': showError(addCustomerForm.Gender)}">
+          <label class="control-label">Gender</label>
+          <select name="Gender" ng-model="customer.gender" class="form-control" ng-options="gender for gender in genderOptions" required="">
+            <option value="">Select a gender...</option>
+          </select>
+          <span class="help-block" ng-show="showError(addCustomerForm.Gender)">Required</span>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': showError(addCustomerForm.Dob)}">
+          <label class="control-label">Date of birth</label>
+          <input class="form-control" name="Dob" ng-model="customer.dob" type="date" required="" />
+          <span class="help-block" ng-show="showError(addCustomerForm.Dob, 'required')">Required</span>
+          <span class="help-block" ng-show="showError(addCustomerForm.Dob, 'date')">Enter a valid date</span>
+        </div>
+
+        <div class="form-group pull-right">
+          <button class="form-control btn btn-success" type="submit">Add Customer</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <h2 class="col-lg-12">Implementation</h2>
+
+
+  <div class="code-container col-lg-12">
+    <p>Below is an illustration of how standard form validation should be implemented.</p>
+      <pre>
+      &lt;<span style='color:#7f0055; font-weight:bold; '>div</span> class=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>form-group</span><span style='color:#2a00ff; '>"</span> ng-class=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>{'has-error': showError(addCustomerForm['First Name'])}</span><span style='color:#2a00ff; '>"</span>>
+        &lt;label class=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>control-label</span><span style='color:#2a00ff; '>"</span>>First Name&lt;/label>
+        &lt;input class=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>form-control</span><span style='color:#2a00ff; '>"</span> name=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>First Name</span><span style='color:#2a00ff; '>"</span> ng-model=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>customer.firstName</span><span style='color:#2a00ff; '>"</span> type=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>text</span><span style='color:#2a00ff; '>"</span> required=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>"</span> />
+        &lt;span class=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>help-block</span><span style='color:#2a00ff; '>"</span> ng-show=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>showError(addCustomerForm['First Name'])</span><span style='color:#2a00ff; '>"</span>>Required&lt;/span>
+      &lt;/<span style='color:#7f0055; font-weight:bold; '>div</span>>
+      </pre>
+    <p>Multiple validations can be used on the same input.</p>
+      <pre>
+      &lt;<span style='color:#7f0055; font-weight:bold; '>div</span> class=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>form-group</span><span style='color:#2a00ff; '>"</span> ng-class=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>{'has-error': showError(addCustomerForm.Email)}</span><span style='color:#2a00ff; '>"</span>>
+        &lt;label class=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>control-label</span><span style='color:#2a00ff; '>"</span>>Email&lt;/label>
+        &lt;input class=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>form-control</span><span style='color:#2a00ff; '>"</span> name=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>Email</span><span style='color:#2a00ff; '>"</span> ng-model=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>customer.email</span><span style='color:#2a00ff; '>"</span> type=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>email</span><span style='color:#2a00ff; '>"</span> required=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>"</span> />
+        &lt;span class=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>help-block</span><span style='color:#2a00ff; '>"</span> ng-show=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>showError(addCustomerForm.Email, 'required')</span><span style='color:#2a00ff; '>"</span>>Required&lt;/span>
+        &lt;span class=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>help-block</span><span style='color:#2a00ff; '>"</span> ng-show=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>showError(addCustomerForm.Email, 'email')</span><span style='color:#2a00ff; '>"</span>>Please enter a valid email address&lt;/span>
+      &lt;/<span style='color:#7f0055; font-weight:bold; '>div</span>>
+      </pre>
+  </div>
+
+
+</div>
