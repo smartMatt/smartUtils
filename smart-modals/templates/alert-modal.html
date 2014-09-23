@@ -7,5 +7,5 @@
   <p ng-bind-html="options.message"></p>
 </div>
 <div class="modal-footer">
-  <button class="btn btn-success" ng-click="$dismiss()">{{options.confirm}}</button>
+  <button ng-class="options.closeClass" ng-click="$close()">{{options.close}}</button>
 </div>

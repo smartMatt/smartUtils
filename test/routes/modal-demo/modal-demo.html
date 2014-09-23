@@ -9,19 +9,37 @@
     var options = {
       title: <span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>Alert Modal</span><span style='color:#2a00ff; '>"</span>,
       message: <span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>Warning this is an alert.</span><span style='color:#2a00ff; '>"</span>,
-      confirm: <span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>Ok</span><span style='color:#2a00ff; '>"</span>
+      close: <span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>Ok</span><span style='color:#2a00ff; '>"</span>
     }
 
     smartModals.alert(options);
     </pre>
   </div>
+  <div class="col-lg-12">
+    <hr>
+  </div>
   <div class="col-sm-3">
     <span class="btn btn-sm btn-success" ng-click="confirmModal()">Confirm Modal</span>
   </div>
   <div class="col-sm-9">
+    <pre>
+    var options = {
+      title: <span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>Confirm Modal</span><span style='color:#2a00ff; '>"</span>,
+      message: <span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>Do you approve this modal?</span><span style='color:#2a00ff; '>"</span>,
+      close: <span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>Yes</span><span style='color:#2a00ff; '>"</span>,
+      dismiss: <span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>No</span><span style='color:#2a00ff; '>"</span>
+    }
 
+    smartModals.confirm(options)
+    </pre>
+  </div>
+  <div class="col-lg-12">
+    <hr>
   </div>
   <div class="col-sm-3">
     <span class="btn btn-sm btn-primary" ng-click="customModal()">Custom Modal</span>
+  </div>
+  <div class="col-sm-9">
+
   </div>
 </div>

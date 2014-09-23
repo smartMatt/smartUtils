@@ -7,7 +7,7 @@ smartDemo.controller('ModalDemoCtrl', function($scope, smartModals) {
     var options = {
       title: "Alert Modal",
       message: "Warning this is an alert.",
-      confirm: "Ok"
+      close: "Ok"
     }
 
     smartModals.alert(options);
