@@ -48,6 +48,7 @@ smartModals.factory('smartModals', ['$modal', '$sce', function($modal, $sce) {
       var url = options.templateUrl || './bower_components/smart-utils/smart-modals/templates/confirm-modal.html';
       options.message = $sce.trustAsHtml(options.message);
       options.closeClass = options.closeClass || "btn btn-success";
+      options.dismissClass = options.dismissClass || "btn btn-danger";
       options.close = options.close || "Yes";
       options.dismiss = options.dismiss || "Close";
 

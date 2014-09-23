@@ -43,21 +43,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modal-demo-ctrl.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="modal-demo-ctrl.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/routes/modal-demo/modal-demo-ctrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4992908" vertical-offset="0" max-vertical-offset="705">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="592">
               <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="smart-modals.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="smart-modals.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/smart-modals/smart-modals.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="368" max-vertical-offset="1136">
-              <caret line="50" column="68" selection-start-line="50" selection-start-column="68" selection-end-line="50" selection-end-column="68" />
+            <state vertical-scroll-proportion="0.68085104" vertical-offset="368" max-vertical-offset="1152">
+              <caret line="53" column="50" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -200,8 +200,8 @@
         <option value="$PROJECT_DIR$/test/routes/form-demo/form-demo.html" />
         <option value="$PROJECT_DIR$/test/routes/modal-demo/modal-demo.html" />
         <option value="$PROJECT_DIR$/smart-modals/templates/confirm-modal.html" />
-        <option value="$PROJECT_DIR$/smart-modals/smart-modals.js" />
         <option value="$PROJECT_DIR$/test/routes/modal-demo/modal-demo-ctrl.js" />
+        <option value="$PROJECT_DIR$/smart-modals/smart-modals.js" />
       </list>
     </option>
   </component>
@@ -741,18 +741,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smart-modals/smart-modals.js">
+    <entry file="file://$PROJECT_DIR$/test/routes/modal-demo/modal-demo-ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="368" max-vertical-offset="1136">
-          <caret line="50" column="68" selection-start-line="50" selection-start-column="68" selection-end-line="50" selection-end-column="68" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="592">
+          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/routes/modal-demo/modal-demo-ctrl.js">
+    <entry file="file://$PROJECT_DIR$/smart-modals/smart-modals.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4992908" vertical-offset="0" max-vertical-offset="705">
-          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.68085104" vertical-offset="368" max-vertical-offset="1152">
+          <caret line="53" column="50" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
           <folding />
         </state>
       </provider>

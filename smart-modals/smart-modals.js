@@ -51,6 +51,7 @@ smartModals.factory('smartModals', ['$modal', '$sce', function($modal, $sce) {
       options.dismissClass = options.dismissClass || "btn btn-danger";
       options.close = options.close || "Yes";
       options.dismiss = options.dismiss || "Close";
+      options.next = options.next || function(){};
 
       $modal.open({
         templateUrl: url,
