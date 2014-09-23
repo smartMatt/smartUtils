@@ -1,5 +1,6 @@
 {
   "name": "smartUtils",
+  "version": "0.0.0",
   "homepage": "https://github.com/smartMatt/smartUtils",
   "authors": [
     "Matt Ross <matt@smartsrc.com>"
@@ -17,15 +18,5 @@
     "angular": "~1.2.25",
     "angular-bootstrap": "~0.11.0",
     "bootstrap": "~3.2.0"
-  },
-  "_release": "7a70b7b122",
-  "_resolution": {
-    "type": "branch",
-    "branch": "master",
-    "commit": "7a70b7b122d4d38cd52778f8699dd8bbd34331de"
-  },
-  "_source": "git://github.com/smartMatt/smartUtils.git",
-  "_target": "*",
-  "_originalSource": "smart-utils",
-  "_direct": true
+  }
 }
