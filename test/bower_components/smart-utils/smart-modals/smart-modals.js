@@ -8,7 +8,7 @@ smartModals.factory('smartModals', ['$modal', '$sce', function($modal, $sce) {
       config = config || {};
 
       var template;
-      var url = config.templateUrl || '/smart-modals/alert-modal.html';
+      var url = config.templateUrl || './bower_components/smart-utils/smart-modals/templates/alert-modal.html';
 
       if(config.template) {
         url = null;
@@ -45,7 +45,7 @@ smartModals.factory('smartModals', ['$modal', '$sce', function($modal, $sce) {
     },
     confirm: function(options) {
 
-      var url = options.templateUrl || '/bower_components/smart-utils/smart-modals/templates/confirm-modal.html';
+      var url = options.templateUrl || './bower_components/smart-utils/smart-modals/templates/confirm-modal.html';
       options.message = $sce.trustAsHtml(options.message);
       options.closeClass = options.closeClass || "btn btn-success";
       options.close = options.close || "Yes";
