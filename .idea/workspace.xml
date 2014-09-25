@@ -33,21 +33,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ping-demo-ctrl.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ping-demo-ctrl.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/routes/ping-demo/ping-demo-ctrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27157003" vertical-offset="0" max-vertical-offset="707">
-              <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="352">
+              <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="smart-ping.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="smart-ping.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/smart-ping/smart-ping.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="640">
-              <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.6562942" vertical-offset="0" max-vertical-offset="707">
+              <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -130,8 +130,8 @@
         <option value="$PROJECT_DIR$/test/routes/ping-demo/ping-demo.html" />
         <option value="$PROJECT_DIR$/test/index.html" />
         <option value="$PROJECT_DIR$/test/app.js" />
-        <option value="$PROJECT_DIR$/smart-ping/smart-ping.js" />
         <option value="$PROJECT_DIR$/test/routes/ping-demo/ping-demo-ctrl.js" />
+        <option value="$PROJECT_DIR$/smart-ping/smart-ping.js" />
       </list>
     </option>
   </component>
@@ -847,18 +847,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smart-ping/smart-ping.js">
+    <entry file="file://$PROJECT_DIR$/test/routes/ping-demo/ping-demo-ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="640">
-          <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="352">
+          <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/routes/ping-demo/ping-demo-ctrl.js">
+    <entry file="file://$PROJECT_DIR$/smart-ping/smart-ping.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27157003" vertical-offset="0" max-vertical-offset="707">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.6562942" vertical-offset="0" max-vertical-offset="707">
+          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
           <folding />
         </state>
       </provider>

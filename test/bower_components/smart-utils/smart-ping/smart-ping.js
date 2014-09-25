@@ -16,12 +16,16 @@ smartPing.factory('smartPing', function ($timeout) {
 
   }
 
+  function stopPing (id) {
+    $timeout.cancel(pings[id]);
+  }
+
   return {
     startPing: function (id, callback, timeout) {
       sendPing(id, callback, timeout);
     },
     stopPing: function (id) {
-
+      stopPing(id);
     },
     getPings: function () {
       return pings;

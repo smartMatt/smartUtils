@@ -6,11 +6,11 @@ smartDemo.controller('PingDemoCtrl', function ($scope, smartPing) {
       console.dir(id);
       next();
     }
-    smartPing.startPing(id, callback, 7500);
+    smartPing.start(id, callback, 3000);
   }
 
   $scope.stopPing = function (id) {
-    smartPing.stopPing(id)
+    smartPing.stop(id)
   }
 
 
