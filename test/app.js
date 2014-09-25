@@ -1,4 +1,4 @@
-var smartDemo = angular.module('smartDemo', ['ngRoute', 'ui.bootstrap', 'smartErrors', 'smartModals', 'smartForms', 'smartDirectives']);
+var smartDemo = angular.module('smartDemo', ['ngRoute', 'ui.bootstrap', 'smartErrors', 'smartModals', 'smartForms', 'smartDirectives', 'smartPing']);
 
 
 smartDemo.config(['$routeProvider', function ($routeProvider) {
@@ -14,6 +14,9 @@ smartDemo.config(['$routeProvider', function ($routeProvider) {
   }).when('/directive-demo', {
     controller: 'DirectiveDemoCtrl',
     templateUrl: 'routes/directive-demo/directive-demo.html'
+  }).when('/ping-demo', {
+    controller: 'PingDemoCtrl',
+    templateUrl: 'routes/ping-demo/ping-demo.html'
   })
 
 }])

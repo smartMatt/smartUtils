@@ -36,6 +36,7 @@ smartModals.factory('smartModals', ['$modal', '$sce', function($modal, $sce) {
       options.closeClass = options.closeClass || "btn btn-success";
       options.close = options.close || "Yes";
       options.next = options.next || function(){};
+      options.dismissNext = options.dismissNext || function(){};
 
 
       $modal.open({
@@ -45,6 +46,8 @@ smartModals.factory('smartModals', ['$modal', '$sce', function($modal, $sce) {
         }
       }).result.then(function () {
             options.next();
+          }, function () {
+            options.dismissNext();
           });
     },
     confirm: function(options) {
@@ -56,6 +59,8 @@ smartModals.factory('smartModals', ['$modal', '$sce', function($modal, $sce) {
       options.close = options.close || "Yes";
       options.dismiss = options.dismiss || "Close";
       options.next = options.next || function(){};
+      options.dismissNext = options.dismissNext || function(){};
+
 
       $modal.open({
         templateUrl: url,
@@ -64,6 +69,8 @@ smartModals.factory('smartModals', ['$modal', '$sce', function($modal, $sce) {
         }
       }).result.then(function () {
             options.next();
+          }, function () {
+            options.dismissNext();
           });
     }
   }
