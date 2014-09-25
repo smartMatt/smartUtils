@@ -29,7 +29,7 @@
   <div class="form-container col-lg-12">
 
 
-    <form novalidate="" role="form" name="addCustomerForm" ng-submit="validateForm(addCustomerForm) && saveCustomer(customer)">
+    <form novalidate ng-submit="validateForm(addCustomerForm) && saveCustomer(customer)" name="addCustomerForm" role="form">
 
       <!-- name and email inputs -->
       <div class="col-md-4">
@@ -133,6 +133,19 @@
         &lt;span class=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>help-block</span><span style='color:#2a00ff; '>"</span> ng-show=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>showError(addCustomerForm.Email, 'required')</span><span style='color:#2a00ff; '>"</span>>Required&lt;/span>
         &lt;span class=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>help-block</span><span style='color:#2a00ff; '>"</span> ng-show=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>showError(addCustomerForm.Email, 'email')</span><span style='color:#2a00ff; '>"</span>>Please enter a valid email address&lt;/span>
       &lt;/<span style='color:#7f0055; font-weight:bold; '>div</span>>
+      </pre>
+    <br>
+    <br>
+    <p>Construct the ng-submit attribute as follows.</p>
+      <pre>
+      &lt;form novalidate ng-submit=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>validateForm(addCustomerForm) &amp;&amp; saveCustomer(customer)</span><span style='color:#2a00ff; '>"</span> name=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>addCustomerForm</span><span style='color:#2a00ff; '>"</span> role=<span style='color:#2a00ff; '>"</span><span style='color:#2a00ff; '>form</span><span style='color:#2a00ff; '>"</span>>
+      </pre>
+    <br>
+    <br>
+    <p>Finally, make sure to initialize the SmartForms methods in the controller.</p>
+      <pre>
+      $scope.showError = smartForms.showError;
+      $scope.validateForm = smartForms.validateForm;
       </pre>
   </div>
 
