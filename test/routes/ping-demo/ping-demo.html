@@ -1,18 +1,15 @@
 <div>
-  <h2 class="col-lg-12">SmartPing</h2>
+
 
   <div class="col-lg-12">
-    <hr>
-  </div>
-
-  <div class="col-lg-12">
-    <h3>Overview</h3>
+    <h2>SmartPing</h2>
     <div class="col-lg-12">
-      <p>SmartPing</p>
+      <p>SmartPing is a way to quickly create and manage (many) looping timeouts.</p>
 
     </div>
 
   </div>
+
 
   <div class="col-lg-12">
     <hr>
@@ -20,10 +17,34 @@
 
   <h3 class="col-lg-12">Demo</h3>
 
-  <div class="col-lg-12">
-    <span class="btn btn-sm btn-success" ng-click="startPing(1)">Start ping 1</span>
-    <span class="btn btn-sm btn-danger" ng-click="stopPing(1)">Stop ping 1</span>
-    <span class="btn btn-sm btn-success" ng-click="startPing(2)">Start ping 2</span>
-    <span class="btn btn-sm btn-danger" ng-click="stopPing(2)">Stop ping 2</span>
+  <div class="col-sm-3">
+    <div class="col-lg-12">
+      <span class="btn btn-sm btn-success" ng-click="startPing(1)" ng-hide="show.1">Start ping 1</span>
+      <span class="btn btn-sm btn-danger" ng-click="stopPing(1)" ng-show="show.1">Stop ping 1</span>
+      <span ng-init="counters.1 = 0">{{counters.1}}</span>
+    </div>
+    <br>
+    <br>
+    <div class="col-lg-12">
+      <span class="btn btn-sm btn-success" ng-click="startPing(2)" ng-hide="show.2">Start ping 2</span>
+      <span class="btn btn-sm btn-danger" ng-click="stopPing(2)" ng-show="show.2">Stop ping 2</span>
+      <span ng-init="counters.2 = 0">{{counters.2}}</span>
+    </div>
   </div>
+  <div class="col-sm-9">
+    <p>Start a timeout loop be clicking on the Start button. This will increment the display value by one every second.</p>
+    <p>Cancel a timeout loop by clicking on the Stop button.</p>
+    <p>Notice how the timeout loops can be managed independently.</p>
+  </div>
+
+  <div class="col-lg-12">
+    <hr>
+  </div>
+
+  <h3 class="col-lg-12">Implementation</h3>
+
+  <div class="col-lg-12">
+  </div>
+
+
 </div>

@@ -21,13 +21,13 @@ smartPing.factory('smartPing', function ($timeout) {
   }
 
   return {
-    startPing: function (id, callback, timeout) {
+    start: function (id, callback, timeout) {
       sendPing(id, callback, timeout);
     },
-    stopPing: function (id) {
+    stop: function (id) {
       stopPing(id);
     },
-    getPings: function () {
+    get: function () {
       return pings;
     }
   }
