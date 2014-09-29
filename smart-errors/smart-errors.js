@@ -27,14 +27,18 @@ function errFunc (msg, url, line) {
 
 
 var smartErrors = angular.module('smartErrors', ['smartModals']).config(function($httpProvider) {
+  $httpProvider.interceptors.push('smartInterceptor')
+
 })
 
 smartErrors.factory('smartInterceptor', ['$q', '$rootScope', '$injector', function($q, $rootScope, $injector) {
 
   var requestInterceptor = {
     requestError: function(response) {
-      var smartLog = $injector.get('smartLog');
-      var options = this.interceptorConfig.requestInterceptor.options;
+      var smartLog = $injector.get('smartLog'),
+          smartConfig = $injector.get('smartConfig');
+
+      var options = smartConfig.requestInterceptor.options;
 
       var config = {
         data: {
@@ -42,7 +46,7 @@ smartErrors.factory('smartInterceptor', ['$q', '$rootScope', '$injector', functi
           url: response.config.url,
           method: response.config.method
         },
-        debug: this.interceptorConfig.requestInterceptor.debug
+        debug: smartConfig.requestInterceptor.debug
       }
 
       response.errorType = "httpRequestError";
@@ -73,16 +77,7 @@ smartErrors.factory('smartInterceptor', ['$q', '$rootScope', '$injector', functi
     }
   };
 
-  return {
-    init: function () {
-      return requestInterceptor;
-    },
-    setConfig: function (config) {
-      this.interceptorConfig = config;
-    },
-    interceptorConfig: {}
-
-  }
+  return requestInterceptor;
 
 }])
 
@@ -100,13 +95,13 @@ smartErrors.factory('$exceptionHandler', ['$injector', function($injector) {
 }]);
 
 
-smartErrors.factory('smartLog', ['$http', 'smartModals', function($http, smartModals) {
+smartErrors.factory('smartLog', ['$http', 'smartModals', 'smartConfig', function($http, smartModals, smartConfig) {
 
   var log = function(error, options, config) {
 
     config = config || {};
 
-    var currentDebug = config.debug > this.smartLogConfig.debug ? config.debug : this.smartLogConfig.debug;
+    var currentDebug = config.debug > smartConfig.debug ? config.debug : smartConfig.debug;
 
     options = options || {}
     options.title = options.title || "Error";
@@ -136,11 +131,10 @@ smartErrors.factory('smartLog', ['$http', 'smartModals', function($http, smartMo
 
 
 
-    $http.post(this.smartLogConfig.url + '/errors/' + this.smartLogConfig.collectionName, postObject).success(function(data) {
+    $http.post(smartConfig.url + '/errors/' + smartConfig.collectionName, postObject).success(function(data) {
       console.dir(data);
     });
 
-    console.dir(error);
   }
 
 
@@ -152,7 +146,6 @@ smartErrors.factory('smartLog', ['$http', 'smartModals', function($http, smartMo
   window.onerror = windowError;
 
   return {
-    smartLogConfig: {},
     httpError: function (response, options, config) {
       if (response.status == 400 || response.status >= 500) {
         this.log(response, options, config);
@@ -166,16 +159,18 @@ smartErrors.factory('smartLog', ['$http', 'smartModals', function($http, smartMo
 
 }])
 
-smartErrors.factory('smartConfig', ['$injector', '$httpProvider', function($injector, $httpProvider) {
+smartErrors.factory('smartConfig', ['$injector', function($injector) {
 
-  var smartLog = $injector.get('smartLog');
-  var debug = 1;
-  var collectionName = 'almsr-dev';
-
-  return function (config) {
-    smartLog.smartLogConfig = config;
+  return {
+    init: function (config) {
+      this.url = config.url;
+      this.collectionName = config.collectionName;
+      this.masterDebug = config.masterDebug;
+      this.requestInterceptor = config.requestInterceptor;
+      this.responseInterceptor = config.responseInterceptor;
+      this.errorInterceptor = config.errorInterceptor;
+    }
   }
-//  $httpProvider.interceptors.push('smartInterceptor')
 
 }])
 

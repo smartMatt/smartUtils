@@ -17,6 +17,9 @@ smartDemo.config(['$routeProvider', function ($routeProvider) {
   }).when('/ping-demo', {
     controller: 'PingDemoCtrl',
     templateUrl: 'routes/ping-demo/ping-demo.html'
+  }).when('/error-demo', {
+    controller: 'ErrorDemoCtrl',
+    templateUrl: 'routes/error-demo/error-demo.html'
   })
 
 }])
@@ -25,7 +28,7 @@ smartDemo.config(['$routeProvider', function ($routeProvider) {
 smartDemo.run(['smartConfig', function (smartConfig) {
 
   var config = {
-    masterDebug: 0,
+    masterDebug: 2,
     collectionName: 'almsr-dev',
     url: 'http://127.0.0.1:3000',
     requestInterceptor: {
@@ -50,6 +53,7 @@ smartDemo.run(['smartConfig', function (smartConfig) {
       debug: 1
     }
   }
-  smartConfig(config);
+
+  smartConfig.init(config);
 
 }])
