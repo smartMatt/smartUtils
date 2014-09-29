@@ -20,3 +20,37 @@ smartDemo.config(['$routeProvider', function ($routeProvider) {
   })
 
 }])
+
+
+smartDemo.config(['$httpProvider', '$injector', function ($httpProvider, $injector) {
+  var smartErrors = $injector.get('smartErrors');
+
+  var config = {
+    masterDebug: 0,
+    collectionName: 'almsr-dev',
+    url: 'http://127.0.0.1:3000',
+    requestInterceptor: {
+      options: {
+        title: "Title goes here"
+      },
+      config: {
+        debug: 1
+      }
+    },
+
+    responseInterceptor: {
+      options: {
+        title: "Title goes here"
+      },
+      config: {
+        debug: 1
+      }
+    },
+
+    errorInterceptor: {
+      debug: 1
+    }
+  }
+  smartErrors.smartConfig(config);
+
+}])
