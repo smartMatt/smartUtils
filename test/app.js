@@ -22,8 +22,7 @@ smartDemo.config(['$routeProvider', function ($routeProvider) {
 }])
 
 
-smartDemo.config(['$httpProvider', '$injector', function ($httpProvider, $injector) {
-  var smartErrors = $injector.get('smartErrors');
+smartDemo.run(['smartConfig', function (smartConfig) {
 
   var config = {
     masterDebug: 0,
@@ -51,6 +50,6 @@ smartDemo.config(['$httpProvider', '$injector', function ($httpProvider, $inject
       debug: 1
     }
   }
-  smartErrors.smartConfig(config);
+  smartConfig(config);
 
 }])
