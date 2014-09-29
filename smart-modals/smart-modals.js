@@ -18,6 +18,10 @@ smartModals.factory('smartModals', ['$modal', '$sce', function($modal, $sce) {
       options.data = config.data || {};
 
       options.message = $sce.trustAsHtml(options.message);
+      options.closeClass = options.closeClass || "btn btn-success";
+      options.close = options.close || "Yes";
+      options.next = options.next || function(){};
+      options.dismissNext = options.dismissNext || function(){};
 
       $modal.open({
         templateUrl: url,

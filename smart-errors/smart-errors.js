@@ -126,7 +126,14 @@ smartErrors.factory('smartLog', ['$http', 'smartModals', 'smartConfig', function
       vendor: navigator.vendor
     }
 
+    var summary = {
+      browser: navigator.sayswho,
+      errorType: error.errorType,
+      url: error.currentUrl
+    }
+
     var postObject = {
+      summary: summary,
       browser: browser,
       error: error
     }
