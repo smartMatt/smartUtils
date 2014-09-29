@@ -56,17 +56,19 @@ smartErrors.factory('smartInterceptor', ['$q', '$rootScope', '$injector', functi
       return $q.reject(response);
     },
     responseError: function(response) {
-      var smartLog = $injector.get('smartLog');
+      var smartLog = $injector.get('smartLog'),
+          smartConfig = $injector.get('smartConfig');
 
-      var options = {
-        title: "Server Error"
-      }
+
+      var options = smartConfig.responseInterceptor.options;
+
       var config = {
         data: {
           status: response.status,
           url: response.config.url,
           method: response.config.method
-        }
+        },
+        debug: smartConfig.responseInterceptor.debug
       }
 
       response.errorType = "httpResponseError";
@@ -101,7 +103,7 @@ smartErrors.factory('smartLog', ['$http', 'smartModals', 'smartConfig', function
 
     config = config || {};
 
-    var currentDebug = config.debug > smartConfig.debug ? config.debug : smartConfig.debug;
+    var currentDebug = config.debug > smartConfig.masterDebug ? config.debug : smartConfig.masterDebug;
 
     options = options || {}
     options.title = options.title || "Error";
