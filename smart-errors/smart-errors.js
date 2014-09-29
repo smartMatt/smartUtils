@@ -175,7 +175,7 @@ smartErrors.factory('smartConfig', ['$injector', '$httpProvider', function($inje
   return function (config) {
     smartLog.smartLogConfig = config;
   }
-  $httpProvider.interceptors.push('smartInterceptor')
+//  $httpProvider.interceptors.push('smartInterceptor')
 
 }])
 
